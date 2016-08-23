@@ -2,7 +2,7 @@ from distutils.core import setup
 
 setup( name="datastream",
        version='0.1',
-       py_modules=['datastream'],
+       packages=['datastream'],
        requires=['pyzmq(>=15.0.0)'],
        install_requires=['pyzmq>=15.0.0'],
        url="https://github.com/jheise/datastream",
