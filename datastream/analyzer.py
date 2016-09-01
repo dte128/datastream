@@ -37,7 +37,9 @@ class Analyzer(object):
 
         data = self._analyze(data)
 
-        self.output_socket.send(self.zmq_topic + " " + json.dumps(data))
+        # allow analyze to return null as a means of filtering
+        if data:
+            self.output_socket.send(self.zmq_topic + " " + json.dumps(data))
 
     def deactivate(self):
         self.source_socket.close()
